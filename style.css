@@ -1,29 +1,150 @@
-/* Select by tag */
-body {
-	font-family: sans-serif;
-	background-color: #1a1a2e;  /* dark blue */
-	color: #eee;
+/* Color scheme - ice/blue theme */
+:root {
+	--bg-dark: #0a0e27;
+	--bg-medium: #16213e;
+	--bg-light: #1a2942;
+	--ice-blue: #4a9eff;
+	--ice-cyan: #5dfdcb;
+	--text-primary: #e4e4e7;
+	--text-secondary: #a1a1aa;
+}
+
+* {
 	margin: 0;
-	padding: 20px;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-/* Select by class */
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	background-color: var(--bg-dark);
+	color: var(--text-primary);
+	line-height: 1.6;
+}
+
 .container {
-	max-width: 800px;
+	display: flex;
+	max-width: 1200px;
 	margin: 0 auto;
+	min-height: 100vh;
 }
 
-/* Select by id */
-#header {
-	font-size: 48px;
+/* Sidebar */
+.sidebar {
+	width: 250px;
+	background-color: var(--bg-medium);
+	padding: 2rem 1.5rem;
+	position: sticky;
+	top: 0;
+	height: 100vh;
 }
 
-/* Links */
+.sidebar nav ul {
+	list-style: none;
+}
+
+.sidebar nav li {
+	margin-bottom: 1rem;
+}
+
+.sidebar nav a {
+	color: var(--text-secondary);
+	text-decoration: none;
+	font-size: 1.1rem;
+	transition: color 0.2s;
+}
+
+.sidebar nav a:hover {
+	color: var(--ice-blue);
+}
+
+/* Main content */
+main {
+	flex: 1;
+	padding: 3rem 4rem;
+	max-width: 800px;
+}
+
+header h1 {
+	font-size: 3.5rem;
+	color: var(--ice-cyan);
+	margin-bottom: 0.5rem;
+}
+
+.tagline {
+	font-size: 1.3rem;
+	color: var(--text-secondary);
+	margin-bottom: 3rem;
+}
+
+section {
+	margin-bottom: 3rem;
+}
+
+h2 {
+	color: var(--ice-blue);
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+p {
+	font-size: 1.1rem;
+	margin-bottom: 1rem;
+	color: var(--text-primary);
+}
+
 a {
-	color: #4a9eff;  /* ice blue */
+	color: var(--ice-blue);
 	text-decoration: none;
 }
 
 a:hover {
 	text-decoration: underline;
+}
+
+/* Code block */
+pre {
+	background-color: var(--bg-light);
+	padding: 1.5rem;
+	border-radius: 8px;
+	overflow-x: auto;
+	border-left: 4px solid var(--ice-cyan);
+}
+
+code {
+	font-family: 'Courier New', monospace;
+	color: var(--ice-cyan);
+	font-size: 0.95rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+	.container {
+		flex-direction: column;
+	}
+
+	.sidebar {
+		width: 100%;
+		height: auto;
+		position: static;
+		padding: 1.5rem;
+	}
+
+	.sidebar nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.sidebar nav li {
+		margin-bottom: 0;
+	}
+
+	main {
+		padding: 2rem 1.5rem;
+	}
+
+	header h1 {
+		font-size: 2.5rem;
+	}
 }
