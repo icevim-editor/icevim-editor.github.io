@@ -1,0 +1,29 @@
+/* Select by tag */
+body {
+	font-family: sans-serif;
+	background-color: #1a1a2e;  /* dark blue */
+	color: #eee;
+	margin: 0;
+	padding: 20px;
+}
+
+/* Select by class */
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+/* Select by id */
+#header {
+	font-size: 48px;
+}
+
+/* Links */
+a {
+	color: #4a9eff;  /* ice blue */
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
